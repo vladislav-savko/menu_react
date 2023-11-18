@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { useLocation } from 'react-router-dom'
+import queryString from 'query-string'
+import Menu from './components/Menu'
+import Place from './components/Place'
+import Soup from './components/Soup'
+import ColdDrinks from './components/ColdDrinks'
+import Tea from './components/Tea'
+import Coffee from './components/Coffee'
+import Summer from './components/Summer'
+import Dessert from './components/Dessert'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+  const location = useLocation()
+  const parseQuery: { page?: string } = queryString.parse(location.search)
+
+  console.log(parseQuery.page)
+
+  switch (parseQuery.page) {
+    case '0':
+      return <Place />
+    case '1':
+      return <Soup />
+    case '2':
+      return <ColdDrinks />
+    case '3':
+      return <Tea />
+    case '4':
+      return <Coffee />
+    case '5':
+      return <Summer />
+    case '6':
+      return <Dessert />
+    default:
+      return <Menu />
+  }
 }
 
-export default App;
+export default App
