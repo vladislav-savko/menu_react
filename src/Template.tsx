@@ -21,39 +21,43 @@ const Template = ({ children }: ITemplate) => {
   const parseQuery: { page?: string } = queryString.parse(location.search)
 
   return (
-    <div className="body">
-      <div className="w-full flex mt-8 justify-center">
-        <img className="w-[200px] h-auto" src="/images/logo.png" alt="GrandLogo" />
-      </div>
-      <div className="w-full">
-        <div className="w-full flex justify-center mt-4">{children}</div>
-        <div className="flex justify-center gap-2 mt-2">
-          <Link
-            className={`border border-[#768b9b] px-1 text-[#768b9b] ${
-              !parseQuery.page ? 'border-solid' : 'border-dashed'
-            }`}
-            to={{ pathname: '/' }}
-          >
-            Меню
-          </Link>
-          {List.map((item, index) => {
-            return (
-              <Link
-                key={`${item.title}${index}`}
-                className={`border border-[#768b9b] px-1 text-[#768b9b] ${
-                  parseQuery.page && parseInt(parseQuery.page) === index
-                    ? 'border-solid'
-                    : 'border-dashed'
-                }`}
-                to={{ search: `page=${index}` }}
-              >
-                {index}
-              </Link>
-            )
-          })}
+    <>
+      <div className="body_fill" />
+
+      <div className="body">
+        <div className="w-full flex mt-8 justify-center z-10 relative">
+          <img className="w-[200px] h-auto" src="/images/logo.png" alt="GrandLogo" />
+        </div>
+        <div className="w-full main_body z-10 relative">
+          <div className="w-full flex justify-center mt-4">{children}</div>
+          <div className="flex justify-center gap-2 mt-2">
+            <Link
+              className={`border border-[#768b9b] px-1 text-[#768b9b] ${
+                !parseQuery.page ? 'border-solid' : 'border-dashed'
+              }`}
+              to={{ pathname: '/' }}
+            >
+              Меню
+            </Link>
+            {List.map((item, index) => {
+              return (
+                <Link
+                  key={`${item.title}${index}`}
+                  className={`border border-[#768b9b] px-1 text-[#768b9b] ${
+                    parseQuery.page && parseInt(parseQuery.page) === index
+                      ? 'border-solid'
+                      : 'border-dashed'
+                  }`}
+                  to={{ search: `page=${index}` }}
+                >
+                  {index}
+                </Link>
+              )
+            })}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 

@@ -65,7 +65,7 @@ const List2 = [
 
 const Summer = ({}: ISummer) => {
   return (
-    <article className="max-w-[320px] flex flex-col items-center max-h-[calc(100dvh_-_290px)] overflow-auto gap-4">
+    <article className="max-w-[320px] flex flex-col items-center max-h-[calc(100dvh_-_450px)] overflow-auto gap-4">
       <div className="w-[250px]">
         <h2 className="text-lg text-[#d27760] font-bold tracking-wider uppercase">Кофе</h2>
         <table className="w-full flex flex-col gap-1 text-[#768b9b]">

@@ -14,7 +14,7 @@ const List1 = [
 
 const ColdDrinks = ({}: IColdDrinks) => {
   return (
-    <article className="max-w-[320px] flex flex-col items-center max-h-[calc(100dvh_-_290px)] gap-4">
+    <article className="max-w-[320px] flex flex-col items-center max-h-[calc(100dvh_-_450px)] gap-4">
       <div className="w-[250px]">
         <h2 className="text-lg text-[#d27760] font-bold tracking-wider uppercase">
           Холодные напитки

@@ -21,18 +21,45 @@ body {
 }
 
 .body {
-  background-color: #fee3c5;
+  /* background-color: #ffdebc; */
 
   height: 100dvh;
   width: 100vw;
 
   position: absolute;
 
-  border-image: url('./assets/back2.jpg');
+  border-image: url('./assets/back.webp');
   border-image-width: 60px 60px;
-  border-image-slice: 160;
+  border-image-slice: 170;
 }
 
 * {
   box-sizing: border-box;
+}
+
+.body_fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('./assets/back_fill.webp');
+  background-repeat: repeat-y;
+  background-position: center;
+  background-size: cover;
+}
+
+.main_body {
+  width: 320px;
+  margin: auto;
+  padding: 80px 20px;
+  background-color: #ffdebc;
+  border-image: url('./assets/back_main.png');
+  border-image-width: 80px 60px;
+  border-image-slice: 500;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar {
+  @apply h-[0px] w-[1px];
 }
