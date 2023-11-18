@@ -7,7 +7,7 @@ const List = [
   { title: '1 час', price: '13' },
   { title: '2 часа', price: '20' },
   { title: '3 часа', price: '26' },
-  { subtitle: 'каждый сдежующий час', price: '5' },
+  { subtitle: 'каждый следующий час', price: '5' },
 ]
 
 const Place = ({}: IPlace) => {
